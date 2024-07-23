@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter a2coreltejx,$(TARGET_DEVICE)),)
+ifneq ($(filter a2corelte,$(TARGET_DEVICE)),)
 
-LOCAL_PATH := device/samsung/a2coreltejx
+LOCAL_PATH := device/samsung/a2corelte
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

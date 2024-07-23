@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/a2coreltejx
+LOCAL_PATH := device/samsung/a2corelte
 
-PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_a2coreltejx.mk
+PRODUCT_MAKEFILES := $(LOCAL_PATH)/omni_a2corelte.mk

@@ -1,8 +1,8 @@
-LOCAL_PATH := device/samsung/a2coreltejx
+LOCAL_PATH := device/samsung/a2corelte
 
 TARGET_BOARD_PLATFORM := exynos7870
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := a2coreltejx
+TARGET_BOOTLOADER_BOARD_NAME := a2corelte
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -61,7 +61,6 @@ TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
 
 # Architecture
 # According to the device's architecture (64-bit or 32-bit)
-ifeq ($(TARGET_IS_64_BIT),true)
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -75,11 +74,3 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_CPU_ABI_LIST_64_BIT := $(TARGET_CPU_ABI)
 TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
 TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BIT)
-else
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a7
-TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI),$(TARGET_CPU_ABI2)
-endif
