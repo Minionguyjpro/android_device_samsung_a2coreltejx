@@ -8,7 +8,7 @@ TARGET_BOOTLOADER_BOARD_NAME := a2corelte
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true            # To add info about F2FS Filesystem Data Block
 # Put The Size of your Recovery Partition below, get it from your "MT****_Android_scatter.txt"
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 18113056
+# BOARD_RECOVERYIMAGE_PARTITION_SIZE := 22358560
 # BOARD_USES_FULL_RECOVERY_IMAGE := true      # Uncomment this line if you want to remove size restriction
 BOARD_FLASH_BLOCK_SIZE := 0                   # Might be different for your chip
 BOARD_SUPPRESS_SECURE_ERASE := true
@@ -42,6 +42,7 @@ TWRP_INCLUDE_LOGCAT := true                   # Include LogCat Binary
 TW_INCLUDE_FB2PNG := true                     # Include Screenshot Support
 TW_DEFAULT_LANGUAGE := en                     # Set Default Language 
 TW_EXTRA_LANGUAGES := false
+TW_EXCLUDE_NANO := true
 
 # Kernel
 TARGET_IS_64_BIT := true                      # true/false: Determine if the device is 64-bit or not
@@ -61,16 +62,8 @@ TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
 
 # Architecture
 # According to the device's architecture (64-bit or 32-bit)
-TARGET_ARCH := arm64
-TARGET_ARCH_VARIANT := armv8-a
-TARGET_CPU_ABI := arm64-v8a
-TARGET_CPU_ABI2 :=
+TARGET_ARCH := arm
+TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_CPU_ABI := armeabi-v7a
+TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_VARIANT := cortex-a53
-TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv7-a-neon
-TARGET_2ND_CPU_ABI := armeabi-v7a
-TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := cortex-a53
-TARGET_CPU_ABI_LIST_64_BIT := $(TARGET_CPU_ABI)
-TARGET_CPU_ABI_LIST_32_BIT := $(TARGET_2ND_CPU_ABI),$(TARGET_2ND_CPU_ABI2)
-TARGET_CPU_ABI_LIST := $(TARGET_CPU_ABI_LIST_64_BIT),$(TARGET_CPU_ABI_LIST_32_BIT)
