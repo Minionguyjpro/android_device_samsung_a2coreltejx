@@ -1,8 +1,10 @@
 LOCAL_PATH := device/samsung/a2corelte
 
-TARGET_BOARD_PLATFORM := exynos7870
+TARGET_BOARD_PLATFORM := exynos5
+TARGET_SLSI_VARIANT := cm
+TARGET_SOC := exynos7870
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := a2corelte
+TARGET_BOOTLOADER_BOARD_NAME := universal7870
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -57,13 +59,12 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
 # Set FSTAB
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/recovery.fstab
 
-TARGET_BOARD_SUFFIX := _64                    # Remove if the device is 32-bit
-TARGET_USES_64_BIT_BINDER := true             # Remove if the device is 32-bit
+TARGET_USES_64_BIT_BINDER := true
 
 # Architecture
-# According to the device's architecture (64-bit or 32-bit)
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := generic
+TARGET_CPU_CORTEX_A53 := true
