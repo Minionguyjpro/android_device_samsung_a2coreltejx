@@ -1,32 +1,35 @@
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+# Release name
+PRODUCT_RELEASE_NAME := a2corelte
 
-# Another common config inclusion
-$(call inherit-product, $(SRC_TARGET_DIR)/product/embedded.mk)
-
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# Replace $$DEVICE$$ with your Device Name's Value.
-# Replace $$BRAND$$ with your Brand's / Manufacturer's Value.
-PRODUCT_COPY_FILES += device/samsung/a2corelte/prebuilt/zImage:kernel
-# Fles under $(LOCAL_PATH)/recovery/root/ gets automatically copied into recovery
-# PRODUCT_COPY_FILES += $(LOCAL_PATH)/recovery/root/*:root/*
+PRODUCT_PACKAGES += \
+	charger_res_images \
+	charger
 
+## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := a2corelte
+PRODUCT_MODEL := SM-A260F
 PRODUCT_NAME := omni_a2corelte
 PRODUCT_BRAND := samsung
-PRODUCT_MODEL := SM-A260F
 PRODUCT_MANUFACTURER := samsung
 
-# Forcefully add mtp support (adb is already there)
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+ifeq ($(TARGET_PREBUILT_KERNEL),)
+LOCAL_KERNEL := device/samsung/a2corelte/Image
+else
+LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
+endif
 
-# Add fingerprint from Stock ROM build.prop
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    # These lines are from my device. You MUST Replace yours.
-    BUILD_FINGERPRINT="samsung/a2coreltejx/a2corelte:8.1.0/OPR6/A260FXXU4ATA6:user/release-keys"
-    PRIVATE_BUILD_DESC="a2coreltejx-user 8.1.0 OPR6 A260FXXSEAUJ1 release-keys"
+ifeq ($(TARGET_PREBUILT_DTB),)
+LOCAL_KERNEL_DTB := device/samsung/a2corelte/dtb.img
+else
+LOCAL_KERNEL_DTB := $(TARGET_PREBUILT_DTB)
+endif
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_KERNEL):kernel \
+    $(LOCAL_KERNEL_DTB):dt.img
