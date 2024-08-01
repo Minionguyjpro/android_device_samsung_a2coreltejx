@@ -8,11 +8,8 @@ TARGET_BOOTLOADER_BOARD_NAME := universal7870
 
 # Recovery
 TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true            # To add info about F2FS Filesystem Data Block
-# Put The Size of your Recovery Partition below, get it from your "MT****_Android_scatter.txt"
-# BOARD_RECOVERYIMAGE_PARTITION_SIZE := 22358560
-# BOARD_USES_FULL_RECOVERY_IMAGE := true      # Uncomment this line if you want to remove size restriction
-BOARD_FLASH_BLOCK_SIZE := 0                   # Might be different for your chip
+TARGET_USERIMAGES_USE_F2FS := true
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 22358560
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_RECOVERY_SWIPE := true
 BOARD_USES_MMCUTILS := true
