@@ -1,3 +1,5 @@
+DEVICE_PATH := device/samsung/a2corelte
+
 USE_CAMERA_STUB := true
 
 TARGET_NO_BOOTLOADER := true
