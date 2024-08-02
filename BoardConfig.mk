@@ -58,7 +58,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
-BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/a2corelte/custombootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/a2corelte/bootimg.mk
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
@@ -73,6 +73,7 @@ TW_HAS_DOWNLOAD_MODE := true
 TW_NO_EXFAT_FUSE := true
 TW_MTP_DEVICE := "/dev/mtp_usb"
 TW_EXCLUDE_SUPERSU := true
+TW_SCREEN_BLANK_ON_BOOT := true
 
 # Color fix
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
