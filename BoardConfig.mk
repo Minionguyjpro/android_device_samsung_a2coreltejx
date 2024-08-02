@@ -84,7 +84,7 @@ TW_INCLUDE_CRYPTO := true
 #TARGET_HW_DISK_ENCRYPTION := true
 
 # Debug flags
-#TWRP_INCLUDE_LOGCAT := true
-#TARGET_USES_LOGD := true
+TWRP_INCLUDE_LOGCAT := true
+TARGET_USES_LOGD := true
 
 PB_GO := true
