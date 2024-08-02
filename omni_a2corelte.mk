@@ -19,13 +19,13 @@ PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/samsung/a2corelte/Image
+LOCAL_KERNEL := device/samsung/a2corelte/prebuilt/Image
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 ifeq ($(TARGET_PREBUILT_DTB),)
-LOCAL_KERNEL_DTB := device/samsung/a2corelte/dtb.img
+LOCAL_KERNEL_DTB := device/samsung/a2corelte/prebuilt/dtb.img
 else
 LOCAL_KERNEL_DTB := $(TARGET_PREBUILT_DTB)
 endif
