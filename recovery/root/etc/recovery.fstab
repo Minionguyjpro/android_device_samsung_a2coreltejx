@@ -32,7 +32,7 @@
 /dev/block/platform/13540000.dwmmc0/by-name/CACHE	/cache      	ext4	defaults		recoveryonly
 /dev/block/platform/13540000.dwmmc0/by-name/SYSTEM	/system     	ext4	defaults		recoveryonly
 /dev/block/platform/13540000.dwmmc0/by-name/USERDATA	/data		f2fs	defaults	 	wait,check,encryptable=footer,length=-20480
-/dev/block/mmcblk1p1	                                /sdcard        vfat	defaults		recoveryonly
+/dev/block/mmcblk1p1	                                /sdcard         vfat	defaults		recoveryonly
 /dev/block/platform/13540000.dwmmc0/by-name/ODM		/odm		ext4	defaults		recoveryonly
 /dev/block/platform/13540000.dwmmc0/by-name/RADIO	/modem		emmc	defaults		recoveryonly
 /dev/block/platform/13540000.dwmmc0/by-name/VENDOR      /vendor		ext4    defaults     		recoveryonly
