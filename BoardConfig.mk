@@ -45,8 +45,8 @@ BOARD_USERDATAIMAGE_PARTITION_SIZE := 0x334000000
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 0x002800000
 BOARD_FLASH_BLOCK_SIZE := 131072
 
-TARGET_PREBUILT_KERNEL := device/samsung/a2corelte/Image
-TARGET_PREBUILT_DTB := device/samsung/a2corelte/dtb.img
+TARGET_PREBUILT_KERNEL := device/samsung/a2corelte/prebuilt/Image
+TARGET_PREBUILT_DTB := device/samsung/a2corelte/prebuilt/dtb.img
 
 BOARD_KERNEL_SEPARATED_DT := true
 
@@ -57,7 +57,8 @@ BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 BOARD_SUPPRESS_SECURE_ERASE := true
-BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/a2corelte/bootimg.mk
+BOARD_CANT_BUILD_RECOVERY_FROM_BOOT_PATCH := true
+BOARD_CUSTOM_BOOTIMG_MK :=  device/samsung/a2corelte/custombootimg.mk
 
 # TWRP specific build flags
 TW_THEME := portrait_hdpi
