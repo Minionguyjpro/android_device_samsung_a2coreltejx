@@ -24,6 +24,12 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
+ifeq ($(TARGET_PREBUILT_DT),)
+LOCAL_KERNEL_DT := device/samsung/a2corelte/prebuilt/dt.img
+else
+LOCAL_KERNEL_DT := $(TARGET_PREBUILT_DT)
+endif
+
 ifeq ($(TARGET_PREBUILT_DTB),)
 LOCAL_KERNEL_DTB := device/samsung/a2corelte/prebuilt/dtb.img
 else
@@ -32,4 +38,4 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel \
-    $(LOCAL_KERNEL_DTB):dt.img
+    $(LOCAL_KERNEL_DT):dt.img
