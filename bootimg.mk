@@ -5,8 +5,6 @@
 ############################ Dan Pasanen ############################
 #####################################################################
 
-cp $(LOCAL_PATH)/prebuilt/dt.img $(PRODUCT_OUT)/dt.img
-
 #####################################################################
 ########## Compress recovery ramdisk using LZMA #####################
 #####################################################################
@@ -22,6 +20,7 @@ $(INSTALLED_RECOVERYIMAGE_TARGET): $(MKBOOTIMG) \
 	rm -f $(recovery_uncompressed_ramdisk).lzma
 	$(LZMA_BIN) $(recovery_uncompressed_ramdisk)
 	$(hide) cp $(recovery_uncompressed_ramdisk).lzma $(recovery_ramdisk)
+  $(hide) cp $(LOCAL_PATH)/prebuilt/dt.img $(PRODUCT_OUT)/dt.img
 	@echo ----- Making recovery image ------
 	$(MKBOOTIMG) $(INTERNAL_RECOVERYIMAGE_ARGS) $(BOARD_MKBOOTIMG_ARGS) --output $@
 	@echo -e ${CL_CYN}"----- Made recovery image -------- $@"${CL_RST}
