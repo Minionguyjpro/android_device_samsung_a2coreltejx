@@ -44,6 +44,11 @@ on fs
     write /sys/class/android_usb/android0/iProduct ${ro.product.model}
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
 
+    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/input/enabled
+    chown system system /sys/class/sec/tsp/multi_count
+    chown system system /sys/class/sec/tsp/comm_err_count
+
 on boot
     ifup lo
     hostname localhost
