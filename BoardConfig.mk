@@ -48,7 +48,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 TARGET_PREBUILT_KERNEL := device/samsung/a2corelte/prebuilt/Image
 TARGET_PREBUILT_DTB := device/samsung/a2corelte/prebuilt/dtb.img
 
-BOARD_KERNEL_SEPARATED_DT := true
+#BOARD_KERNEL_SEPARATED_DT := true
 
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
